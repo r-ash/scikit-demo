@@ -1,0 +1,60 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "scikit-demo"
+version = "0.0.1"
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = []
+authors = [
+  { name = "Rob Ashton", email = "robertashton94@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["numpy"]
+
+[project.urls]
+Documentation = "https://github.com/Rob Ashton/scikit-demo#readme"
+Issues = "https://github.com/Rob Ashton/scikit-demo/issues"
+Source = "https://github.com/Rob Ashton/scikit-demo"
+
+[tool.hatch.version]
+path = "src/scikit_demo/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/scikit_demo tests}"
+
+[tool.coverage.run]
+source_pkgs = ["scikit_demo", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/scikit_demo/__about__.py",
+]
+
+[tool.coverage.paths]
+scikit_demo = ["src/scikit_demo", "*/scikit-demo/src/scikit_demo"]
+tests = ["tests", "*/scikit-demo/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
