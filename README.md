@@ -1,7 +1,6 @@
 # scikit-demo
 
-[![PyPI - Version](https://img.shields.io/pypi/v/scikit-demo.svg)](https://pypi.org/project/scikit-demo)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scikit-demo.svg)](https://pypi.org/project/scikit-demo)
+[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 
 -----
 
