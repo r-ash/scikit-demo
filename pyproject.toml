@@ -58,3 +58,17 @@ exclude_lines = [
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
 ]
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+  "pytest_mock",
+  "pytest-unordered",
+  "pytest-cov",
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

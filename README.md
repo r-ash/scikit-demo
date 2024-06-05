@@ -38,6 +38,12 @@ pipx run build
 
 ## Running
 
+You can run the tests with
+
+```console
+hatch run test
+```
+
 ```python
 import example
 import numpy as np
