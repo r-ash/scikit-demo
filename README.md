@@ -20,15 +20,23 @@ sudo apt-get install libeigen3-dev
 
 My build and installation instructions use `hatch`. But this would also work with `pipx`
 
+## Useful hatch commands
+
+```console
+hatch shell
+hatch run install
+hatch run test
+hatch run install_and_test
+```
+
 ## Building and installing
 
 This uses [scikit-build-core](https://scikit-build-core.readthedocs.io/en/latest/index.html) to build an example using pybind11 with Eigen.
 
-With hatch and pip
+With hatch
 
 ```console
-hatch shell
-pip install .
+hatch run install
 ```
 
 with pipx
@@ -40,6 +48,11 @@ pipx run build
 
 You can run the tests with
 
+```console
+hatch run install_and_test
+```
+
+or, if you haven't modified the C++
 ```console
 hatch run test
 ```

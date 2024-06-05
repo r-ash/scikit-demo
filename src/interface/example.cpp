@@ -23,4 +23,20 @@ PYBIND11_MODULE(example, m) {
         "get_tensor",
         []() { return new Eigen::Tensor<double, 3>(get_tensor()); },
         py::return_value_policy::move);
+
+    py::class_<Data>(m, "Data")
+        .def(py::init<TensorMap2, TensorMap2>())
+        .def_readonly("tensor1", &Data::tensor1)
+        .def_readonly("tensor2", &Data::tensor2);
+
+    m.def(
+        "add_tensors_py",
+        &add_tensors_py,
+        "A function that adds two tensors from a Data struct",
+        py::return_value_policy::move);
+
+    m.def(
+        "add_tensors_in_place_py",
+        &add_tensors_in_place_py,
+        "A function that adds two tensors from a Data struct into a area of memory owned by python");
 }
